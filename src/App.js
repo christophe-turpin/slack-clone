@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header/Header";
+import Sidebar from "./components/Sidebar/Sidebar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Chat from "./components/Chat/Chat";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // BEM naming convention
+    <div className="app">
+      <Router>
+        <Header />
+        <div className="app__body">
+          <Sidebar />
+          <Switch>
+            <Route path="/room/:roomId">
+              <Chat />
+            </Route>
+            <Route path="/">
+              <h1>Welcome</h1>
+            </Route>
+          </Switch>
+          {/* React Router -> Chat screen*/}
+        </div>
+      </Router>
     </div>
   );
 }
