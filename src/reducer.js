@@ -1,5 +1,7 @@
+import firebase from "firebase";
+
 export const initialState = {
-  user: null,
+  user: firebase.auth().currentUser,
 };
 
 export const actionTypes = {
