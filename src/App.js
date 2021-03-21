@@ -7,6 +7,7 @@ import Login from "./components/Login/Login";
 import { useStateValue } from "./StateProvider";
 
 function App() {
+  // eslint-disable-next-line no-unused-vars
   const [{ user }, dispatch] = useStateValue();
 
   return (
