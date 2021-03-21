@@ -1,5 +1,7 @@
+import { auth } from "./firebase";
+
 export const initialState = {
-  user: null,
+  user: auth.currentUser,
 };
 
 export const actionTypes = {
@@ -7,7 +9,6 @@ export const actionTypes = {
 };
 
 const reducer = (state, action) => {
-  console.log(action);
   switch (action.type) {
     case actionTypes.SET_USER:
       return {
