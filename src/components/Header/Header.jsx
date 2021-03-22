@@ -29,7 +29,7 @@ function Header() {
           alt={user?.displayName}
           src={user?.photoURL}
         />
-        <Logout onClick={signOut} />
+        <Logout onClick={signOut} cursor="pointer" />
         <AccessTimeIcon />
       </div>
       <div className="header__search">
